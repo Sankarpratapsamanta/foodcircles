@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(flash());
 app.use(session({
-    secret: 'supersecret',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     // cookie: { secure: true }
@@ -69,6 +69,6 @@ app.all('*',(req,res)=>{
 
 
 
+let PORT=3000 || process.env.PORT
 
-
-app.listen(3000,()=> console.log('server started'));
+app.listen(PORT,()=> console.log('server started'));
