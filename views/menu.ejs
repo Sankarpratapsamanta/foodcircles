@@ -1,0 +1,63 @@
+<%include partial/header%>
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+        <br><br>
+        <h1 class="header center text-lighten-4 top-heading">See Our Menu</h1>
+        </div>
+        <form action="#" method="GET">
+            <div class="row center">
+                <div class="input-field col s12 l6 offset-l3 white-text">
+                    <i class="material-icons prefix">search</i>
+                    <input id="icon_prefix" type="text" name="search" class="validate white-text">
+                    <label for="icon_prefix">Search your item ( Ex : pizza )</label>
+                </div>
+            </div>
+            <div class="center">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="parallax top-image"><img src="/images/restaurant-7.jpg" alt="background img 1"></div>
+</div>
+<section class="home-section">
+    <div class="row home-grid__1">
+        <div class="col l6 s12 offset-l1">
+            <h4 class="home-section__heading white-text">Our Delicous Menu</h4>
+            <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores recusandae voluptatibus vel harum commodi obcaecati, labore debitis ratione consectetur praesentium beatae nobis laborum magni necessitatibus aliquid? Temporibus autem beatae ad non facere quod distinctio officiis. Et quas, recusandae obcaecati facere dolorum veritatis quam. Cupiditate tempora dolore sed dolorum aspernatur adipisci laboriosam.</p>
+        </div>
+    </div>
+</section>
+<section class="home-section">
+    <div class="row home-grid__1 infinite-container">
+        <h5 class="white-text center"><%=noMatch%></h5>
+        <%product.forEach(function(product){%>
+            <div class="col s12 m6 l4 offset-l1 allproduct infinite-item">
+                <div class="card menu-card">
+                    <div class="card-image">
+                        <img class="menu-image" src="<%=product.photo%>">     
+                        <a class="btn-floating halfway-fab waves-effect waves-light green"><span class="white-text rating"><%=product.rating%></span></a>
+                        
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title white-text menu-title center"><%=product.title%></span>
+                        <p class="red-text center"><span class="menu-price"><i class="fas fa-rupee-sign red-text"></i> <%=product.price%></span></p>
+                        <br>
+                        <p class="white-text"><%=product.description%></p>
+                        <br>
+                        <div class="input-field col l3 center">
+                            <input id="quantity" type="number" value="1" name="quantity" class="validate white-text menu-quantity center">
+                            <label for="quantity">Quantity</label>
+                        </div>
+                        <p class="green-text center menu-total-price">Total : <i class="fas fa-rupee-sign green-text"></i><span class="total-price">0</span></p>
+                        <div class="center">
+                            <a class="btn waves-effect waves-light red menu-btn" href="/foodcircles/menu/<%=product._id%>" >Order Now</a>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        <%})%>
+    </div>
+
+</section>
+<%include partial/footer%>

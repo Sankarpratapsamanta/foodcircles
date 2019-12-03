@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodCircles</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11fb746e6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="\images\icon.png">
+</head>
+<body>
+        <nav>
+            <div class="nav-wrapper  red  accent-3">
+                <a href="/foodcircles" class="brand-logo center">Home</a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul id="slide-out" class="sidenav sidenav-fixed  red  accent-3">
+            <div class="center"><img class="admin-brand__icon" src="\images\icon.png" alt="brand-icon"></div>
+            <h5 class="brand-logo center white-text admin-heading">  Administrator</h5>
+            <hr class="style-two">
+            <div class="center">
+                <li><img class="admin-img" src="<%=currentuser.photo%>" alt="user-photo"></li>
+            </div>
+            <h6 class="center white-text">Name : <%=currentuser.username%></h6>
+            <h6 class="center white-text admin-logout"><a class="btn  waves-effect waves-light  black" href="/logout">Logout</a></h6>
+        </ul>
+        <div>
+            <%if(error && error.length >0 ){%>
+                <h6 class="white-text result error center-align"><%=error%></h6>
+            <%}%>
+            <%if(success && success.length > 0){%>
+                <h6 class="white-text result success center-align"><%=success%></h6>
+            <%}%>
+        </div>
+        <section class="addproduct-section">
+            <div class="row">
+                <div class="col s12 l3">&nbsp;</div>
+                <div class="col s12 l6">
+                    <div class="right">
+                        <a href="/foodcircles/admin"><i class="material-icons left arrow-back">arrow_back</i>BACK</a>
+                    </div>
+                    <p class="white-text">Add New : </p>
+                    <div class="white-text addproduct-form">
+                        <form action="/foodcircles/admin/addproduct" method="POST" enctype="multipart/form-data">
+                            <div class="input-field login-inputs">
+                                <input id="user_name" type="text" name="title" class="validate white-text" required>
+                                <label for="user_name">Title</label>
+                            </div>
+                            <div class="file-field input-field login-inputs">
+                                <div class="btn file">
+                                    <span>Photo</span>
+                                    <input name="photo" type="file" required>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate white-text" type="text">
+                                </div>
+                            </div>
+                            <div class="input-field login-inputs">
+                                <input id="price" type="number" name="price" class="validate white-text" required>
+                                <label for="price">Price</label>
+                            </div>
+                            <div class="input-field login-inputs">
+                                <input id="rating" type="text" name="rating" class="validate white-text" required>
+                                <label for="rating">Rating</label>
+                            </div>
+                            <div class="input-field login-inputs">
+                                <input id="description" type="text" name="description" class="validate white-text" required>
+                                <label for="description">Description</label>
+                            </div>
+                            <div class="center">
+                                <button class="btn waves-effect waves-light login-inner__btn" type="submit" name="action">Submit</button>
+                            </div>
+                            
+                        </form> 
+                    </div>
+                </div>
+                <div class="col s12 l2">&nbsp;</div>
+            </div>
+        
+                
+        </section>
+    
+    
+    
+    
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/../javascript/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<%include partial/header%>
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+        <br><br>
+        <h1 class="header center text-lighten-4 top-heading">Reserved a Table Today!</h1>
+        </div>
+    </div>
+    <div class="parallax top-image"><img src="/images/restaurant-7.jpg" alt="background img 1"></div>
+</div>
+<section class="home-section">
+    <div class="row home-grid__1">
+        <div class="col l6 s12 offset-l1">
+            <h4 class="home-section__heading white-text">Reservation</h4>
+            <p class="white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores recusandae voluptatibus vel harum commodi obcaecati, labore debitis ratione consectetur praesentium beatae nobis laborum magni necessitatibus aliquid? Temporibus autem beatae ad non facere quod distinctio officiis. Et quas, recusandae obcaecati facere dolorum veritatis quam. Cupiditate tempora dolore sed dolorum aspernatur adipisci laboriosam.</p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row home-grid__1">
+        <div class="col l5"></div>
+        <div class="col s12 l5 reservation-form">
+            <div class="row">
+                <form action="/reservation" method="POST">
+                    <div class="input-field col s12">
+                        <input type="text" id="username-input" name="name" class="autocomplete white-text" required>
+                        <label for="username-input">Your Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select name="people" required>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        </select>
+                        <label>How Many People</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" id="date" name="date" class="datepicker autocomplete white-text" required>
+                        <label for="date">When</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="time" type="text" name="time" class="timepicker autocomplete white-text" required>
+                        <label for="time">Time</label>
+                    </div>
+                    <div class="col s5 offset-l1">
+                        <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%include partial/footer%>

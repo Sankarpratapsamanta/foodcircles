@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodCircles</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11fb746e6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="\images\icon.png">
+</head>
+<body>
+    <section class="login-section">
+        <div class="signup-form">
+            <span><a class="left" href="/login"><i class="material-icons">reply_all</i> BACK</a></span>
+            <span><i class="fas fa-user-plus signup-icon"></i></span>
+            <h1 class="login"><span class="white-text login-heading">SIGNUP</span></h1>
+            <%if(error && error.length >0 ){%>
+                <h6 class="white-text result error center-align"><%=error%></h6>
+            <%}%>
+            <%if(success && success.length > 0){%>
+                <h6 class="white-text result success center-align"><%=success%></h6>
+            <%}%>
+            <form action="/signup" method="POST" enctype="multipart/form-data">
+                <div class="input-field login-inputs">
+                    <input id="user_name" type="text" class="validate white-text" name="username" required>
+                    <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field  login-inputs">
+                    <input id="email" type="email" class="validate white-text" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field login-inputs">
+                    <input type="text" id="date" class="datepicker white-text" name="birthday" required>
+                    <label for="date">Birthday</label>
+                </div>
+                <div class="file-field input-field login-inputs">
+                    <div class="btn file">
+                        <span>Photo</span>
+                        <input name="photo" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate white-text" type="text">
+                    </div>
+                </div>
+                <div class="input-field login-inputs">
+                    <input id="password" type="password" class="validate white-text" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field login-inputs">
+                    <input id="admin" type="password" class="validate white-text" name="adminCode" required>
+                    <label for="admin">Admin Code</label>
+                </div>
+                <div class="signup-btn">
+                    <button class="btn waves-effect waves-light login-inner__btn" type="submit" name="action">Signup</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="../javascript/main.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodCircles</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11fb746e6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="\images\icon.png">
+</head>
+<body onload="homepage()">
+    <div id="loading"></div>
+    <section class="login-section">
+        <div class="login-form">
+            <span><a class="left" href="/login"><i class="material-icons">reply_all</i> BACK</a></span>
+            <span><i class="fas fa-key forgot-icon white-text"></i></span>
+            <h1 class="login"><span class="white-text login-heading">FORGOT</span></h1>
+            <div>
+                <%if(error && error.length >0 ){%>
+                    <h6 class="white-text result error center-align"><%=error%></h6>
+                <%}%>
+                <%if(success && success.length > 0){%>
+                    <h6 class="white-text result success center-align"><%=success%></h6>
+                <%}%>
+            </div>
+            <form action="/forgot" method="POST">
+            
+                <div class="input-field login-inputs">
+                    <input id="user_name" type="text" name="username" class="validate white-text" required>
+                    <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field login-inputs">
+                    <input id="password" type="password" name="password" class="validate white-text" required>
+                    <label for="password">Reset Password</label>
+                </div>
+                <div class="forgot-btn">
+                    <button id="login-btn" class="btn waves-effect waves-light login-inner__btn" type="submit">Reset</button>
+                </div>
+            </form>
+        </div>
+    </section>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="../javascript/main.js"></script>
+</body>
+</html>

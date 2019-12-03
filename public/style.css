@@ -1,0 +1,383 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+}
+#loading{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    pointer-events: visibleStroke;
+    overflow: hidden;
+    height: 100%;
+    background-attachment: scroll;
+    background:#000 url("https://i.gifer.com/41pV.gif") no-repeat center;
+}
+/* https://i.gifer.com/NPJK.gif */
+/* https://i.gifer.com/Yx9l.gif */
+.nav-wrapper{
+    background-color: #000;
+}
+.brand-icon{
+    height: 60px;
+}
+#nav-mobile{
+    text-transform:uppercase;
+}
+.company-icon{
+    height: 19rem;
+}
+.logout-icon{
+    height: 1.2rem;
+}
+.nav-logout-icon{
+    margin-top: 1rem;
+    height: 1rem;
+}
+.logout{
+    padding-left: 25px;
+    font-size: 21px;
+}
+.mobile-logout{
+    margin-top: 3rem;
+}
+#slide-out{
+    background-color: #000;
+    text-transform: uppercase;
+}
+.sidenav .user-view .name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: crimson;
+}
+.sidenav .user-view .email {
+    font-size: 1rem;
+    font-weight: 900;
+    color: crimson;
+}
+.page-footer{
+    /* background-color: rgba(128, 128, 128, 0.452); */
+    background-color: darkkhaki;
+}
+.footer-icon{
+    font-size: 2rem;
+    padding: 20px 20px;
+    color: crimson;
+}
+.footer-rights{
+    padding-top: 10px;
+}
+.top-heading{
+    font-family: 'Lobster', cursive;
+    color:#fff;
+}
+.home-grid__1{
+    padding-top: 7rem;
+}
+.home-grid__2{
+    margin-top: 7rem;
+}
+.home-section__image{
+    height: 400px;
+}
+.home-section__heading{
+    font-family: 'Lobster', cursive;
+    margin-top: 0;
+}
+.menu-card{
+    background-color: transparent;
+}
+.menu-image{
+    height: 200px;
+}
+.restaurant-owner{
+    height: 600px;
+}
+.owner-testimonial{
+    font-family: 'Lobster', cursive;
+    margin: 0;
+}
+.carousel-section{
+  height: 550px;
+}
+.event-img{
+    height: 200px;
+    width: 500px;
+}
+.top-image{
+    opacity: 0.55;
+}
+.dropdown-content{
+    background-color: #000;
+}
+.gallery-image{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.reservation-form{
+    outline: 7px solid #f44336;
+    outline-offset: 20px;
+    background: -webkit-linear-gradient(to right, #403a3e, #be5869); 
+    background: linear-gradient(to right, #403a3e, #be5869);
+    /* background: -webkit-linear-gradient(to right, #333333, #dd1818); 
+    background: linear-gradient(to right, #333333, #dd1818); */
+}
+.experience-heading{
+    background-color:#333333;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.experience-inner__points{
+    border-left: 3px solid crimson;
+}
+.experience-points{
+    display: flex;
+}
+.experience-points__icon{
+    padding-top: 32px;
+    color: crimson;
+    padding-right: 2rem;
+}
+.contact-btn{
+    margin-top: 1.2rem;
+}
+.button{
+    padding-bottom: 2rem;
+}
+.row .col.s5{
+    padding-bottom: 2rem;
+}
+.login-section{
+    background-color: #000;
+    position: fixed;
+    /* height: 100vh; */
+}
+.login-form{
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid crimson;
+}
+.signup-form{
+    position: fixed;
+    /* top: 10%; */
+    left: 50%;
+    height: 100vh;
+    transform: translateX(-50%);
+    border: 10px solid crimson;
+}
+.login-heading{
+    background-color: crimson;
+    font-weight: 700;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.login{
+    margin-top: 0;
+}
+.login-inputs{
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-right: 1rem;
+}
+.login-btn{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 14rem;
+}
+.forgot-btn{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 16rem;
+}
+.login-icon{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 15rem;
+}
+.forgot-icon{
+    font-size: 3rem;
+    margin-left: 12.5rem;
+}
+.signup-icon{
+    font-size: 3rem;
+    color: #fff;
+    margin-left: 11.8rem;
+}
+.login-inner__btn{
+    background-color: #dc143c;
+}
+.login-inner__btn:hover{
+    background-color: crimson;
+}
+.login-notmember{
+    margin-left: 10.5rem;
+}
+.forgot-password{
+    margin-left: 12.2rem;
+}
+.signup-btn{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 15rem;
+}
+.gender{
+    display: flex;
+}
+.file{
+    background-color: crimson;
+}
+.file:hover{
+    background-color: crimson;
+}
+.user-img{
+    z-index: 2;
+    background-size: cover;
+    height: 3rem;
+    object-fit: cover;
+    width: 100%;
+}
+.error{
+    background-color: red;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.success{
+    background-color: green;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.admin-brand__icon{
+    height: 15rem;
+}
+.admin-heading{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.admin-img{
+    margin-top: 2rem;
+    height: 10rem;
+    width: 50%;
+    border-radius: 70%;
+}
+.admin-logout{
+    padding-top: 2rem;
+}
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(130, 70, 179, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.dashboard{
+    font-family: 'Lobster', cursive;
+}
+.dashboard-icon{
+    font-size: 2.5rem;
+    color: yellow;
+}
+.user-tab{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.product-tab{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.addproduct-section{
+    margin-top: 5rem;
+}
+.addproduct-form{
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: pink;
+}
+.product-collection{
+    margin-top: 3.5rem;
+}
+.wayto-addproduct{
+    margin-top:10px;
+}
+.menu-price{
+    font-size: 1.5rem;
+    font-family: 'Lobster', cursive;
+}
+.menu-title{
+    text-transform: capitalize;
+}
+.menu-btn{
+    margin-top: 1rem;
+}
+i.left{
+    margin: 0;
+}
+
+/*payment*/
+.example.example3 {
+    background-color:#000;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+.example.example3 * {
+font-family: Quicksand, Open Sans, Segoe UI, sans-serif;
+font-size: 16px;
+font-weight: 600;
+}
+
+.rounded{
+    margin-top: 2.5rem;
+}
+.payment-company-icon{
+    height: 10rem;
+}
+.payment-price{
+    border-bottom: 5px solid rgba(226, 37, 37, 0.836);
+}
+.user-edit{
+    margin-top: 4rem;
+    background: -webkit-linear-gradient(to left, #ff416c, #ff4b2b);
+    background: linear-gradient(to left, #ff416c, #ff4b2b);
+    border-radius: 0 60px;
+}
+.edit-user-photo{
+    margin-top: 2rem;
+    /* height: 15rem; */
+    height: 100%;
+    border-radius: 0 30px;
+    width: 100%;
+}
+.edit-user-form{
+    margin-top: 3rem;
+}
+.profile-setup{
+    font-family: 'Lobster', cursive;
+    display: inline;
+    background: -webkit-linear-gradient(to left, #ff416c, #ff4b2b);
+    background-image: linear-gradient(to left, #ff416c, #ff4b2b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.menu-total-price{
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+}
+.rating{
+    padding-left: 9px;
+    font-size: 1rem;
+    font-weight: 700;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodCircles</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11fb746e6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="\images\icon.png">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper  red accent-3">
+            <a href="/foodcircles" class="brand-logo center">Home</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <%if(currentuser.adminCode===true){%>
+
+   
+    <ul id="slide-out" class="sidenav sidenav-fixed red accent-3"> 
+        <div class="center"><img class="admin-brand__icon" src="\images\icon.png" alt="brand-icon"></div>
+        <h5 class="brand-logo center white-text admin-heading">  Administrator</h5>
+        <hr class="style-two">
+        <div class="center">
+            <li><img class="admin-img" src="<%=currentuser.photo%>" alt="user-photo"></li>
+        </div>
+        <h6 class="center white-text">Name : <%=currentuser.username%></h6>
+        <h6 class="center white-text admin-logout"><a class="btn  waves-effect waves-light  black" href="/logout">Logout</a></h6>
+    </ul>
+
+    <div>
+        <h2 class="white-text center dashboard"><i class="material-icons dashboard-icon">web</i> DashBoard</h2>
+        <hr class="style-one">
+    </div>
+    <br>
+    <section class="white-text">
+        <div class="row">
+            <div class="col s12 l3">&nbsp;</div>
+            <div class="col s12 l8">
+                <ul class="tabs tabs-fixed-width tab-demo z-depth-1 black">
+                    <li class="tab user-tab"><a class="active" href="#test1">Users</a></li>
+                    <li class="tab product-tab"><a class="" href="#test2">Products</a></li>
+                    <li class="tab product-tab"><a class="" href="#test3">Booked</a></li>
+                </ul>
+                <div id="test1" class="col s12">
+                    <%if(error && error.length >0 ){%>
+                        <h6 class="white-text result error center-align"><%=error%></h6>
+                    <%}%>
+                    <%if(success && success.length > 0){%>
+                        <h6 class="white-text result success center-align"><%=success%></h6>
+                    <%}%>
+                    <%user.forEach(function(user){%>
+                    <ul class="collection">
+                        <li class="collection-item avatar black">
+                            <img src="<%=user.photo%>" alt="" class="circle">
+                            <span class="title">Name : <%=user.username%></span>
+                            <p>Birthday : <%=user.birthday%> <br>
+                                Email : <%=user.email%> <br>
+                                isAdmin : <%=user.adminCode%>
+                                
+                            </p>
+                            <a class="btn-floating btn-medium waves-effect waves-light green secondary-content" href="/foodcircles/user/<%=user._id%>"><i class="material-icons">edit</i></a>
+                            <div class="right">
+                                <form action="/foodcircles/<%=user._id%>?_method=delete" method="POST">
+                                    <button class="btn-floating waves-effect waves-light red" type="submit" name="action"><i class="material-icons">delete</i></button>
+                                </form>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <%})%>
+                </div>
+                <div id="test2" class="col s12">
+                    <p class="right wayto-addproduct"><a href="/foodcircles/admin/addproduct" class="btn waves-effect waves-light red"><i class="material-icons">add</i></a></p>
+                    <%product.forEach(function(allproducts){%>
+                    <ul class="collection product-collection">
+                        <li class="collection-item avatar black">
+                            <img src="<%=allproducts.photo%>" alt="" class="circle">
+                            <span class="title">Title : <%=allproducts.title%></span>
+                            <p>Description : <%=allproducts.description%> <br>
+                                Rating : <%=allproducts.rating%> <br>
+                                Price : <%=allproducts.price%>
+                            </p>
+                            <a class="btn-floating btn-medium waves-effect waves-light green secondary-content" href="/foodcircles/admin/product/<%=allproducts._id%>"><i class="material-icons">edit</i></a>
+                            <div class="right">
+                                <form action="/foodcircles/admin/product/<%=allproducts._id%>?_method=delete" method="POST">
+                                    <button class="btn-floating waves-effect waves-light red" type="submit" name="action"><i class="material-icons">delete</i></button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                    <%})%>
+                </div>
+                <div id="test3" class="col s12">
+                    <%reservation.forEach(function(allreserve){%>
+                    <ul class="collection product-collection">
+                        <li class="collection-item avatar black">
+                            <span class="title">Name : <%=allreserve.name%></span>
+                            <p>Person : <%=allreserve.people%> <br>
+                                Date : <%=allreserve.date%> <br>
+                                Time : <%=allreserve.time%>
+                            </p>
+                        </li>
+                    </ul>
+                    <%})%>
+                </div>
+            </div>        
+          <div class="col s12 l1">&nbsp;</div>
+    </section>
+    <%}else{%>
+        <h1 class="red-text center"><i class="material-icons red-text">sentiment_very_dissatisfied</i> 404 Not Found !   <i class="material-icons red-text">sentiment_very_dissatisfied</i></h1>
+    <%}%>
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../javascript/main.js"></script>
+</body>
+</html>

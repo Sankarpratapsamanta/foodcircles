@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodCircles</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11fb746e6f.js" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" href="\images\icon.png">
+</head>
+<body>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#" class="brand-logo center"><img class="brand-icon" src="\images\icon.png" alt="brand-icon"></a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="/foodcircles">Home</a></li>
+                    <li><a href="/foodcircles/menu">Menu</a></li>
+                    <li><a href="/foodcircles/gallery">Gallery</a></li>
+                    <li><a href="/foodcircles/reservation">Reservation</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/foodcircles/about">About</a></li>
+                    <li><a href="/foodcircles/contact">Contact</a></li>
+                    <li><a href="/foodcircles/user/<%=currentuser._id%>" class="btn-floating white darken-4 z-depth-0">
+                            <!-- <i class="material-icons">account_circle</i> -->
+                            <img class="user-img" src="<%=currentuser.photo%>" alt="user-photo">
+                            
+                          </a></li>
+                    <li><a href="/logout"><img class="nav-logout-icon"src="https://www.safaribingo.com/skin/images/LogOut-icon.png" alt="logout-icon"> Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+            <div class="background">
+            <img class="company-icon" src="/images/icon.png">
+            </div>
+            <a href="/foodcircles/user/<%=currentuser._id%>"><img class="circle user-img white" src="<%=currentuser.photo%>"></a>
+            <a href="#name"><span class="name"><%=currentuser.username%></span></a>
+            <a href="#email"><span class="email"><%=currentuser.email%></span></a>
+        </div>
+     </li>
+     <li><a class="white-text" href="/foodcircles"><i class="material-icons white-text">arrow_forward</i>Home</a></li>
+     <li><a class="white-text" href="/foodcircles/menu"><i class="material-icons white-text">arrow_forward</i>Menu</a></li>
+     <li><a class="white-text" href="/foodcircles/gallery"><i class="material-icons white-text">arrow_forward</i>Gallery</a></li>
+     <li><a class="white-text" href="/foodcircles/reservation"><i class="material-icons white-text">arrow_forward</i>Reservation</a></li>
+     <li><a class="white-text" href="/foodcircles/about"><i class="material-icons white-text">arrow_forward</i>About</a></li>
+     <li><a class="white-text" href="/foodcircles/contact"><i class="material-icons white-text">arrow_forward</i>Contact</a></li>
+     <li class="mobile-logout"><a href="/logout"><img class="logout-icon"src="https://www.safaribingo.com/skin/images/LogOut-icon.png" alt="logout-icon"><span class="logout white-text">Logout</span></a></li>
+    </ul>
+    <div>
+        <%if(error && error.length >0 ){%>
+            <h6 class="white-text result error center-align"><%=error%></h6>
+        <%}%>
+        <%if(success && success.length > 0){%>
+            <h6 class="white-text result success center-align"><%=success%></h6>
+        <%}%>
+    </div>
+   

@@ -1,0 +1,45 @@
+<%include ../partial/header%>
+<br>
+<div class="center">
+    <h3 class="profile-setup">Profile Setup</h3>
+</div>
+<!-- <br> -->
+<section class="container user-edit">
+    <div class="row">
+        <div class="col s12 l3 center">
+            <img class="edit-user-photo" src="<%=oneuser.photo%>" alt="user-photo">
+        </div>
+        <div class="col s12 l6 edit-user-form">
+            <form action="/foodcircles/user/<%=oneuser._id%>?_method=put" method="POST"  enctype="multipart/form-data">
+                <div class="input-field login-inputs">
+                    <input id="user_name" type="text" class="validate white-text" value="<%=oneuser.username%>" name="username">
+                    <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field  login-inputs">
+                    <input id="email" type="email" class="validate white-text" value="<%=oneuser.email%>" name="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field login-inputs">
+                    <input type="text" id="date" class="datepicker white-text" value="<%=oneuser.birthday%>" name="birthday">
+                    <label for="date">Birthday</label>
+                </div>
+                <div class="file-field input-field login-inputs">
+                    <div class="btn file">
+                        <span>Photo</span>
+                        <input name="photo" type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate white-text" value="<%=oneuser.photo%>" type="text">
+                    </div>
+                </div>
+                <div class="center button">
+                    <button class="btn waves-effect waves-light  pink darken-1 rounded" type="submit" name="action">submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col s12 l3">&nbsp;</div>
+    </div>
+</section>
+
+<%include ../partial/footer%>
+
